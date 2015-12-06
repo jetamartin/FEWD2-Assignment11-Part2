@@ -19,10 +19,8 @@
 -->
     <script src="js/home.js"></script>
    <script src="js/employee.js"></script>
-<!--
    <script src="js/manager.js"></script>
-   <script src="js/directReports.js"></script>
--->
+<!--   <script src="js/directReports.js"></script>-->
    <link rel="stylesheet" href="css/styles.css">
    
 <!--    <link rel="stylesheet" href="css/styles.css">-->
@@ -61,16 +59,16 @@
             <header data-role="header">
                 <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Employee Details</h1>                
-                <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
+                <a id="employeeDetailsSearchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
                 
             </header>
             
             <section data-role="content">
  
-                <div id="employeeProfile">                    
+                <div id="employeeProfile" class="eProfile">                    
  
                 </div>
-                <div id="edata">
+                <div class="edata">
                     <ul id="employeeInfo" data-role="listview"></ul>
                 </div>
                             
@@ -89,16 +87,16 @@
             <header data-role="header">
                 <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Manager Details</h1>                
-                <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
+                <a id="managerDetailsSearchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
                 
             </header>
             
             <section data-role="content">
  
-                <div id="managerProfile">                    
+                <div id="managerProfile" class="eProfile">                    
  
                 </div>
-                <div id="mgrData">
+                <div class="edata">
                     <ul id="managerInfo" data-role="listview"></ul>
                 </div>
                             
@@ -117,7 +115,7 @@
             <header data-role="header">
                 <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Direct Reports</h1>                
-                <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
+                <a id="directReportsSearchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
                 
             </header>
             

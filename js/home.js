@@ -20,7 +20,8 @@ $(document).on("pageinit", "#home", function () {
             });   
         });
        window.console.log(employeeDataObject); 
-       $("#employeeDetails").data("employeeDataObject", employeeDataObject); 
+       $("#employeeDetails").data("employeeDataObject", employeeDataObject);
+        $("#managerDetails").data("employeeDataObject", employeeDataObject);
     });
 function populateSubordinates(managerObject) {
     console.log("PopulateSubord starting");

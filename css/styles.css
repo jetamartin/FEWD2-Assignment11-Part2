@@ -1,13 +1,13 @@
-#employeeProfile img {
+.eProfile img {
     float: left;
     width: 100px;
 }
-#employeeProfile div {    
+.eProfile div {    
     float: left;
     margin: .25em 1em;
 /*    text-align: center;*/
 }
-#edata {
+.edata {
     clear: both;
 }
 
