@@ -19,6 +19,10 @@
 -->
     <script src="js/home.js"></script>
    <script src="js/employee.js"></script>
+<!--
+   <script src="js/manager.js"></script>
+   <script src="js/directReports.js"></script>
+-->
    <link rel="stylesheet" href="css/styles.css">
    
 <!--    <link rel="stylesheet" href="css/styles.css">-->
@@ -55,7 +59,6 @@
 
         <div data-role="page" id="employeeDetails" data-theme="a">
             <header data-role="header">
-<!--                <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back">Back</a>-->
                 <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Employee Details</h1>                
                 <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
@@ -77,7 +80,63 @@
             <footer data-role="footer" data-position="fixed">
                     <h4>Footer</h4>
             </footer>
-    </div>
+        </div>
+        
+        <!--    Manager Details Page  -->
+
+
+        <div data-role="page" id="managerDetails" data-theme="a">
+            <header data-role="header">
+                <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
+                                <h1>Manager Details</h1>                
+                <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
+                
+            </header>
+            
+            <section data-role="content">
+ 
+                <div id="managerProfile">                    
+ 
+                </div>
+                <div id="mgrData">
+                    <ul id="managerInfo" data-role="listview"></ul>
+                </div>
+                            
+
+            </section>
+
+            <footer data-role="footer" data-position="fixed">
+                    <h4>Footer</h4>
+            </footer>
+        </div>
+        
+        <!--    Direct Reports Page  -->
+
+
+        <div data-role="page" id="directReports" data-theme="a">
+            <header data-role="header">
+                <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
+                                <h1>Direct Reports</h1>                
+                <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
+                
+            </header>
+            
+            <section data-role="content">
+ 
+                <div id="directReportsProfile">                    
+ 
+                </div>
+                <div id="directReportsData">
+                    <ul id="directReportsInfo" data-role="listview"></ul>
+                </div>
+                            
+
+            </section>
+
+            <footer data-role="footer" data-position="fixed">
+                    <h4>Footer</h4>
+            </footer>
+        </div>
 
 </body>
 

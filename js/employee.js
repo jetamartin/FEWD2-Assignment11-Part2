@@ -1,28 +1,53 @@
 //$(document).ready(function(e) {
 $(document).on("pagebeforeshow", "#employeeDetails", function () {
     var empId = $(this).data("empId");
-    var employeeDataObject = null;
+    window.console.log("Employee Id: " + empId);
+    var employeeDataObject = $(this).data("employeeDataObject");
+    //    window.console.log(employeeDataObject); 
     var employeeData = "";
-        $.getJSON("../data/employees.json", function(data) {
-            employeeDataObject = data;
-            window.console.log(employeeDataObject);
-            $.each(data, function() {
-                $.each(this, function(key, value) {
-//                    if ( value.id === localStorage.employeeId ) {
-                        if ( value.id === empId ) {
-                        var directReportId = value.reportsTo;
-                        $('#employeeProfile').empty();
-                        $('#employeeProfile').append(
-                            '<img src="' + value.image + '"><div> <h3>' + value.name + '</h3><p>' + value.title + '</p></div>');
-                        employeeData += '<li><a href="#"><h4>View Manager</h4><p>'+value.reportsTo+'</p></a></li>'
-                        employeeData += '<li><a href="#"><h4>View Direct Reports</h4><p>'+value.reportsTo+'</p></a></li>'
-                        employeeData += '<li><a href="#"><h4>Call Office</h4><p>'+value.officeNumber+'</p></a></li>' 
-                        employeeData += '<li><a href="#"><h4>Send Email</h4><p>'+value.email+'</p></a></li>'                         
-                        $("#employeeInfo").html(employeeData).listview("refresh");    
-                    }    
-                });   
-            });                       
+    //        $.getJSON("../data/employees.json", function(data) {
+    $.each(employeeDataObject, function () {
+        $.each(this, function (key, value) {
+            //                    if ( value.id === localStorage.employeeId ) {
+            if (value.id === empId) {
+                var manager = populateManager(value);
+                var managername = null;
+                if (manager !== undefined && manager !== null) {
+                    managername = manager.name;
+                } else {
+                    managername = "Board of Directors";                    
+                }
+                $('#employeeProfile').empty();
+                $('#employeeProfile').append(
+                    '<img src="' + value.image + '"><div> <h3>' + value.name + '</h3><p>' + value.title + '</p></div>');
+                employeeData += '<li><a href="#"><h4>View Manager</h4><p>' + managername + '</p></a></li>'
+                employeeData += '<li><a href="#"><h4>View Direct Reports</h4><p>' + value.subordinates.length + '</p></a></li>'
+                employeeData += '<li><a href="#"><h4>Call Office</h4><p>' + value.officeNumber + '</p></a></li>'
+                employeeData += '<li><a href="#"><h4>Send Email</h4><p>' + value.email + '</p></a></li>'
+                $("#employeeInfo").html(employeeData).listview("refresh");
+            }
         });
     });
+    //        });
+    
+   function populateManager(employeeObject) {
+    console.log("PopulateManager starting");
+    var manager = null; 
+    var managerId = employeeObject.reportsTo; 
+    console.log("ManagerId = [" + managerId + "]");
+    $.each(employeeDataObject, function () {
+        $.each(this, function (key, value) {
+            if (value.id == managerId) {
+                manager = value;
+                return manager;                
+            }
+        });
+    });
+    return manager;
+} 
+});
+
+
+
 
 //});

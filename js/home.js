@@ -1,13 +1,16 @@
-$(document).ready(function() {
-
-//    $(document).on("create", "#home", function(e) {
+//$(document).ready(function() {
+$(document).on("pageinit", "#home", function () {
+    var employeeDataObject = null;
     var listItems = ''; 
-    
+    var directReportId;    
     $.getJSON("../data/employees.json", function(data){
-        window.console.log("JSON Data is loading");
+        employeeDataObject = data;
+        window.console.log(employeeDataObject);
         $.each(data, function() {
-            $.each(this, function(key, value) {                    
-                listItems += '<li  data-filtertext="' + value.name +'"><a id="' + value.id + '" href="#employeeDetails"><img src="'+ value.image + '"><h4>'+ value.name + '</h4><p>' + value.title + '</p> </a></li>';
+            $.each(this, function(key, value) { 
+                populateSubordinates(value); 
+                
+                listItems += '<li  data-filtertext="' + value.name +'"><a id="' + value.id + '" href="#employeeDetails"><img src="'+ value.image + '"><h4>'+ value.name + '</h4><p>' + value.title + '</p><span class="ui-li-count">'+value.subordinates.length + '</span></a></li>';       
                 
                 if ( $("ul#mainList").hasClass('ui-listview')) {
                         $("ul#mainList").html(listItems).listview('refresh');
@@ -15,12 +18,31 @@ $(document).ready(function() {
                         $("ul#mainList").html(listItems).trigger('create');
                  }                                                       
             });   
-        });                       
+        });
+       window.console.log(employeeDataObject); 
+       $("#employeeDetails").data("employeeDataObject", employeeDataObject); 
     });
-//    });
+function populateSubordinates(managerObject) {
+    console.log("PopulateSubord starting");
+    managerObject.subordinates = [];  
+    var managerId = managerObject.id;
+    console.log("ManagerId = " + managerId); 
+    $.each(employeeDataObject, function() {
+        $.each(this, function(key, value) {
+            if (value.reportsTo == managerId) {
+                console.log("Before if test");                
+                managerObject.subordinates.push(value);
+                console.log(managerObject);
+            }
+        });
+   });
+}
+ 
+
    
 $('body').on('click', '#mainList a', function(e) {
     $("#employeeDetails").data("empId", $(this).attr('id'));
+ 
  
 ////  Alternate approach is to use local storage as described below  
 //    if(typeof(Storage)!=="undefined") {
