@@ -1,0 +1,131 @@
+{"employees": [
+    {
+        "id": "0",
+        "name":"Amy Jones",
+        "title": "CEO",
+        "image": "/images/amy_jones.jpg",
+        "officeNumber": "858-299-0000",
+        "cellNumber":"858-311-9000",
+        "email": "ajones@vectacorp.com",
+        "reportsTo": ""        
+    }, 
+    {
+       "id": "1",
+        "name":"Eugene Lee",
+        "title":"VP Of Engineering",
+        "image":"/images/eugene_lee.jpg", 
+        "officeNumber":"858-299-0001",
+        "cellNumber":"858-311-9001",
+        "email":"elee@vectacorp.com",
+        "reportsTo": "0"        
+    },
+    {
+       "id": "2",
+        "name":"Gary Donovan",
+        "title":"VP Of Marketing",
+        "image":"/images/gary_donovan.jpg", 
+        "officeNumber":"858-299-0002",
+        "cellNumber":"858-311-9002",
+        "email":"gdonovan@vectacorp.com",
+        "reportsTo": "0"        
+    },
+    
+    {
+        "id": "3",
+        "name":"James King",
+        "title":"VP Of Finance",
+        "image":"/images/james_king.jpg", 
+        "officeNumber":"858-299-0003",
+        "cellNumber":"858-311-9003",
+        "email":"jking@vectacorp.com",
+        "reportsTo": "0"        
+    },
+    {
+        "id": "4",
+        "name":"John Williams",
+        "title":"Lead Engineer",
+        "image":"/images/john_williams.jpg", 
+        "officeNumber":"858-299-0004",
+        "cellNumber":"858-311-9004",
+        "email":"jwilliams@vectacorp.com",
+        "reportsTo": "1"       
+    },
+     
+    {
+        "id": "5",
+        "name":"Julie Taylor",
+        "title":"Staff Accountant",
+        "image":"/images/julie_taylor.jpg", 
+        "officeNumber":"858-299-0005",
+        "cellNumber":"858-311-9005",
+        "email":"jtaylor@vectacorp.com",
+        "reportsTo": "3"  
+        
+    },
+    
+    {
+        "id": "6",
+        "name":"Kathleen Byrne",
+        "title":"Marketing Assistant",
+        "image":"/images/kathleen_byrne.jpg", 
+        "officeNumber":"858-299-0006",
+        "cellNumber":"858-311-9006",
+        "email":"kbyrne@vectacorp.com",
+        "reportsTo": "2"  
+        
+    },
+    
+    {
+        "id": "7",
+        "name":"Lisa Wong",
+        "title":"Engineer 1",
+        "image":"/images/lisa_wong.jpg", 
+        "officeNumber":"858-299-0006",
+        "cellNumber":"858-311-9006",
+        "email":"lwong@vectacorp.com",
+        "reportsTo": "1"  
+    },
+    {
+        "id": "8",
+        "name":"Paul Jones",
+        "title":"Engineer 1",
+        "image":"../images/paul_jones.jpg", 
+        "officeNumber":"858-299-0007",
+        "cellNumber":"858-311-9007",
+        "email":"pjones@vectacorp.com",
+        "reportsTo": "1"  
+    },
+    {
+        "id": "9",
+        "name":"Paula Gates",
+        "title":"Sales Person",
+        "image":"/images/paula_gates.jpg", 
+        "officeNumber":"858-299-0008",
+        "cellNumber":"858-311-9008",
+        "email":"pgates@vectacorp.com",
+        "reportsTo": "2"  
+    },
+    {
+        "id": "10",
+        "name":"Ray Moore",
+        "title":"Sales Engineer",
+        "image":"/images/ray_moore.jpg", 
+        "officeNumber":"858-299-0008",
+        "cellNumber":"858-311-9008",
+        "email":"rmoore@vectacorp.com",
+        "reportsTo": ""  
+    },
+    {
+        "id": "11",
+        "name":"Steven Wells",
+        "title":"IT Staff",
+        "image":"/images/steven_wells.jpg", 
+        "officeNumber":"858-299-0009",
+        "cellNumber":"858-311-9009",
+        "email":"swells@vectacorp.com",
+        "reportsTo": "2"  
+    }
+
+    
+    
+    ]}

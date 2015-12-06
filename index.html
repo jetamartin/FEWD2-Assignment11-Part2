@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>11</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.icons.css">
+    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
+
+    
+<!--  My original script and links...replaced these with the above
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+-->
+    <script src="js/home.js"></script>
+   <script src="js/employee.js"></script>
+   <link rel="stylesheet" href="css/styles.css">
+   
+<!--    <link rel="stylesheet" href="css/styles.css">-->
+
+
+
+</head>
+
+<body>
+    <div data-role="page" id="home" data-theme="a">
+        <header  data-role="header" data-postion="fixed">
+            <h1>Directory</h1>
+        </header>
+
+        <section data-role="content">
+            <ul id="mainList" data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search">
+                
+            </ul>
+            <div id="welcomeMsg">
+                <h3>Welcome to the VectaCorp Directory!</h3>
+                <p>This is a sample app that demonstrates how to build applications with jQuery Mobile</p>
+            </div>
+
+        </section>
+       
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>Footer</h4>
+        </footer>
+       </div>
+
+        <!--    Employee Details Page  -->
+
+
+        <div data-role="page" id="employeeDetails" data-theme="a">
+            <header data-role="header">
+<!--                <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back">Back</a>-->
+                <a id="backButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
+                                <h1>Employee Details</h1>                
+                <a id="searchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
+                
+            </header>
+            
+            <section data-role="content">
+ 
+                <div id="employeeProfile">                    
+ 
+                </div>
+                <div id="edata">
+                    <ul id="employeeInfo" data-role="listview"></ul>
+                </div>
+                            
+
+            </section>
+
+            <footer data-role="footer" data-position="fixed">
+                    <h4>Footer</h4>
+            </footer>
+    </div>
+
+</body>
+
+</html>
