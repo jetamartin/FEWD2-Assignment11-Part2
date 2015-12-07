@@ -1,6 +1,6 @@
 $(document).on("pagebeforeshow", "#directReports", function () {
     var listItems = '';
-    var employee = $(this).data("employee"); 
+//    var employee = $(this).data("employee"); 
 //    window.console.log(employee);
     //    window.console.log(employeeDataObject); 
     var employeeData = "";
@@ -27,22 +27,29 @@ $(document).on("pagebeforeshow", "#directReports", function () {
 //        $(":mobile-pagecontainer").pagecontainer("change", "#directReports");
 //        $('input[data-type="search"]').val("").trigger("change");
 //    }); 
-$('body').on('click', '#directReportsInfo a', function(e) { 
-    console.log("!!!!The ID ====" + $(this).attr('id'));
-    $("#employeeDetails").data("empId", $(this).attr('id'));
-    $(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails");
+$('body').on('click', '#directReportsInfo a', function(e) {
+//  if statment jQuery Mobile defect #2639 that causes click listener to called multiple times
+//  see last post on: https://github.com/jquery/jquery-mobile/issues/2369
+    if (e.handled !== true) {      
+        e.handled = true;
+        empId = $(this).attr('id');
+//   $("#employeeDetails").data("empId", $(this).attr('id'));
+        $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
+//    $(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails");
+    }
 });
     
     
 });
 
 // Potential fix for BackButton repeated refresh
-$(document).on('click', '#employeeDetailsBackbutton', function(e) { 
+$(document).on('click', '#directReportsBackbutton', function(e) { 
       if (e.handled !== true) { 
            e.handled = true;  
           
            //Page change function here
-          $(":mobile-pagecontainer").pagecontainer("change", "#home"); 
+//          $(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails"); 
+          $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
       }
  });
 
