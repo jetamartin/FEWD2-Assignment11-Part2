@@ -2,10 +2,8 @@
 $(document).on("pageinit", "#home", function () {
     var employeeDataObject = null;
     var listItems = ''; 
-    var directReportId;    
     $.getJSON("../data/employees.json", function(data){
         employeeDataObject = data;
-        window.console.log(employeeDataObject);
         $.each(data, function() {
             $.each(this, function(key, value) { 
                 populateSubordinates(value); 
@@ -19,7 +17,6 @@ $(document).on("pageinit", "#home", function () {
                  }                                                       
             });   
         });
-       window.console.log(employeeDataObject); 
        $("#employeeDetails").data("employeeDataObject", employeeDataObject);
         $("#managerDetails").data("employeeDataObject", employeeDataObject);
     });
@@ -42,6 +39,7 @@ function populateSubordinates(managerObject) {
 
    
 $('body').on('click', '#mainList a', function(e) {
+    console.log("!!!!The ID ====" + $(this).attr('id'));
     $("#employeeDetails").data("empId", $(this).attr('id'));
  
  

@@ -22,6 +22,7 @@ $(document).on("pagebeforeshow", "#managerDetails", function () {
                 managerData += '<li><a href="#"><h4>View Manager</h4><p>' + managername + '</p></a></li>';
                 managerData += '<li><a href="#"><h4>View Direct Reports</h4><p>' + value.subordinates.length + '</p></a></li>';
                 managerData += '<li><a href="#"><h4>Call Office</h4><p>' + value.officeNumber + '</p></a></li>';
+                managerData += '<li><a href="#"><h4>Call Cell</h4><p>' + value.cellNumber + '</p></a></li>'
                 managerData += '<li><a href="#"><h4>Send Email</h4><p>' + value.email + '</p></a></li>';
                 $("#managerInfo").html(managerData).listview("refresh");
             }
@@ -45,4 +46,14 @@ $(document).on("pagebeforeshow", "#managerDetails", function () {
     });
     return manager;
 } 
+    
+    // Potential fix for BackButton repeated refresh
+$(document).on('click', '#managerDetailsBackbutton', function(e) { 
+      if (e.handled !== true) { 
+           e.handled = true;  
+          
+           //Page change function here
+          $(":mobile-pagecontainer").pagecontainer("change", "#home"); 
+      }
+ });
 });
