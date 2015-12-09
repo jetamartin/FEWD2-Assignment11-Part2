@@ -5,10 +5,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <title>Directory</title>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.css">
-    <link rel="stylesheet" href="css/themes/blackHeaderLightGreyBG.css" />
+<!--
+    <link rel="stylesheet" href="css/themes/blackHeaderLightGreyBG.css">
     <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" > 
+-->
 <!--    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">-->
     <script type="text/javascript" src="https://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -34,8 +36,8 @@
 </head>
 
 <body>
-    <div data-role="page" id="home" data-theme="a">
-        <header data-role="header" data-postion="fixed">
+    <div data-role="page" id="home" >
+        <header data-role="header" data-postion="fixed" data-theme="b">
             <h1>Directory</h1>
         </header>
 
@@ -53,7 +55,7 @@
         </section>
        
 
-        <footer data-role="footer" data-position="fixed">
+        <footer data-role="footer" data-position="fixed" data-theme="b">
             <h4>Footer</h4>
         </footer>
        </div>
@@ -62,7 +64,7 @@
 
 
         <div data-role="page" id="employeeDetails" >
-            <header data-role="header">
+            <header data-role="header" data-theme="b">
                 <a id="employeeDetailsBackButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Employee Details</h1>                
                 <a id="employeeDetailsSearchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
@@ -81,17 +83,18 @@
 
             </section>
 
-            <footer data-role="footer" data-position="fixed">
+            <footer data-role="footer" data-position="fixed" data-theme="b">
                     <h4>Footer</h4>
             </footer>
         </div>
         
+
         
         <!--    Direct Reports Page  -->
 
 
         <div data-role="page" id="directReports" >
-            <header data-role="header">
+            <header data-role="header" data-theme="b">
                 <a id="directReportsBackButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Direct Reports</h1>                
                 <a id="directReportsSearchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
@@ -110,7 +113,7 @@
 
             </section>
 
-            <footer data-role="footer" data-position="fixed">
+            <footer data-role="footer" data-position="fixed" data-theme="b">
                     <h4>Footer</h4>
             </footer>
         </div>
