@@ -45,17 +45,11 @@ hr {
 #employeeDetailsSearchButton,
 #directReportsBackButton,
 #directReportsSearchButton {
-/*
-    background-color: #595959;
-    text-shadow: none;
-*/
     border-radius: 1em;
-/*
-    border: none;
-    color: white;    
-*/
+
 }
-.ui-content {
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
     background-color: #e6e6e6;
 }
 
