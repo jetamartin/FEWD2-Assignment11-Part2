@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>11</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.icons.css">
-    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    <title>Directory</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.css">
+    <link rel="stylesheet" href="css/themes/blackHeaderLightGreyBG.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+<!--    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet">-->
     <script type="text/javascript" src="https://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
@@ -31,18 +35,20 @@
 
 <body>
     <div data-role="page" id="home" data-theme="a">
-        <header  data-role="header" data-postion="fixed">
+        <header data-role="header" data-postion="fixed">
             <h1>Directory</h1>
         </header>
 
         <section data-role="content">
-            <ul id="mainList" data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search">
-                
+            <ul id="mainList" data-role="listview" data-filter="true" data-filter-reveal="true" class="ui-alt-icon" search data-filter-placeholder="Search">
+               
             </ul>
+            <hr> 
             <div id="welcomeMsg">
                 <h3>Welcome to the VectaCorp Directory!</h3>
                 <p>This is a sample app that demonstrates how to build applications with jQuery Mobile</p>
             </div>
+            
 
         </section>
        
@@ -55,7 +61,7 @@
         <!--    Employee Details Page  -->
 
 
-        <div data-role="page" id="employeeDetails" data-theme="a">
+        <div data-role="page" id="employeeDetails" >
             <header data-role="header">
                 <a id="employeeDetailsBackButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Employee Details</h1>                
@@ -69,7 +75,7 @@
  
                 </div>
                 <div class="edata">
-                    <ul id="employeeInfo" data-role="listview"></ul>
+                    <ul id="employeeInfo" data-role="listview" data-inset="true"></ul>
                 </div>
                             
 
@@ -80,40 +86,11 @@
             </footer>
         </div>
         
-<!--
-            Manager Details Page  
-
-
-        <div data-role="page" id="managerDetails" data-theme="a">
-            <header data-role="header">
-                <a id="managerDetailsBackButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
-                                <h1>Manager Details</h1>                
-                <a id="managerDetailsSearchButton" href="#home" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-search">Search</a>
-                
-            </header>
-            
-            <section data-role="content">
- 
-                <div id="managerProfile" class="eProfile">                    
- 
-                </div>
-                <div class="edata">
-                    <ul id="managerInfo" data-role="listview"></ul>
-                </div>
-                            
-
-            </section>
-
-            <footer data-role="footer" data-position="fixed">
-                    <h4>Footer</h4>
-            </footer>
-        </div>
--->
         
         <!--    Direct Reports Page  -->
 
 
-        <div data-role="page" id="directReports" data-theme="a">
+        <div data-role="page" id="directReports" >
             <header data-role="header">
                 <a id="directReportsBackButton" href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-back " data-rel="back">Back</a>
                                 <h1>Direct Reports</h1>                

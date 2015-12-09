@@ -73,5 +73,6 @@ $("input[data-type='search']").on("keyup change", function() {
 });
 
 //http://www.peachpit.com/articles/article.aspx?p=1929169&seqNum=2
-//http://stackoverflow.com/questions/18051227/how-to-populate-a-jquery-mobile-listview-with-json-data    
+//http://stackoverflow.com/questions/18051227/how-to-populate-a-jquery-mobile-listview-with-json-data  
+//http://jsfiddle.net/Gajotres/8uac7/
 });

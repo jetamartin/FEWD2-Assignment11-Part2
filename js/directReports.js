@@ -43,15 +43,15 @@ $('body').on('click', '#directReportsInfo a', function(e) {
 });
 
 // Potential fix for BackButton repeated refresh
-$(document).on('click', '#directReportsBackbutton', function(e) { 
-      if (e.handled !== true) { 
-           e.handled = true;  
-          
-           //Page change function here
-//          $(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails"); 
-          $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
-      }
- });
+//$(document).on('click', '#directReportsBackbutton', function(e) { 
+//      if (e.handled !== true) { 
+//           e.handled = true;  
+//          
+//           //Page change function here
+////          $(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails"); 
+//          $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
+//      }
+// });
 
 
 //});

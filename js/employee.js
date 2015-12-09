@@ -1,8 +1,6 @@
 $(document).on("pagebeforeshow", "#employeeDetails", function () {
-//    var empId = $(this).data("empId");
-
-//    var employee = null;
-    console.log("EmpId when landing on employee details = " + empId);
+$.mobile.page.prototype.options.domCache = true;
+//    console.log("EmpId when landing on employee details = " + empId);
     var employeeDataObject = $(this).data("employeeDataObject");
     //    window.console.log(employeeDataObject); 
     var employeeData = "";
@@ -75,15 +73,15 @@ $(document).on("pagebeforeshow", "#employeeDetails", function () {
 } 
     
     // Potential fix for BackButton repeated refresh
-    $(document).on('click', '#employeeDetailsBackbutton', function(e) { 
-      if (e.handled !== true) { 
-           e.handled = true;         
-          
-           //Page change function here
-          $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
-
-      }
- });
+//    $(document).on('click', '#employeeDetailsBackbutton', function(e) { 
+//      if (e.handled !== true) { 
+//           e.handled = true;         
+//          
+//           //Page change function here
+//          $.mobile.changePage( "#home", { allowSamePageTransition: true} );
+//
+//      }
+// });
     
     
 });
