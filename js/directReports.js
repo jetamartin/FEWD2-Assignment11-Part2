@@ -1,41 +1,22 @@
 $(document).on("pagebeforeshow", "#directReports", function () {
     var listItems = '';
-//    var employee = $(this).data("employee"); 
-//    window.console.log(employee);
-    //    window.console.log(employeeDataObject); 
-    var employeeData = "";
-//    $.each(employee.subordinates, function () {
-//        $.each(this, function (key, value) {
-//            console.log("Value: ");
-//            console.log(value);
-////            listItems += '<li  data-filtertext="' + value.name +'"><a id="' + value.id + '" href="#"><img src="'+ value.image + '"><h4>'+ value.name + '</h4><p>' + value.title + '</p><span class="ui-li-count">'+value.subordinates.length + '</span></a></li>'; 
-////            $("#directReportInfo").html(listItems).listview('refresh');
-//        });
-//    });
-   $.each(employee.subordinates, function (key, value) {
+    var employeeData = "";    
+    var employee = JSON.parse(localStorage.getItem('employee')); 
+    
+   $.each(employee.subordinates, function (key, value) { 
             console.log("Current Subordinate Value: ");
             console.log(value);
             listItems += '<li  data-filtertext="' + value.name +'"><a id="' + value.id + '" href="#"><img src="'+ value.image + '"><h4>'+ value.name + '</h4><p>' + value.title + '</p><span class="ui-li-count">'+value.subordinates.length + '</span></a></li>'; 
             $("#directReportsInfo").html(listItems).listview('refresh');
     });
-    
 
-//    $('body').on('click', '#directReportsInfo a', function(e) {
-//        // not sure if I want or need next line
-//        window.console.log("MgrsId Passed to managerDetails = {" + $(this).attr('id') +"}"); 
-//        $("#managerDetails").data("empId", $(this).attr('id'));
-//        $(":mobile-pagecontainer").pagecontainer("change", "#directReports");
-//        $('input[data-type="search"]').val("").trigger("change");
-//    }); 
 $('body').on('click', '#directReportsInfo a', function(e) {
-//  if statment jQuery Mobile defect #2639 that causes click listener to called multiple times
+//  if statment addresses jQuery Mobile defect #2639 that causes click listener to called multiple times
 //  see last post on: https://github.com/jquery/jquery-mobile/issues/2369
     if (e.handled !== true) {      
         e.handled = true;
-        empId = $(this).attr('id');
-//   $("#employeeDetails").data("empId", $(this).attr('id'));
+        localStorage.empId = $(this).attr('id');
         $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
-//    $(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails");
     }
 });
     

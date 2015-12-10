@@ -1,8 +1,4 @@
-//$(document).ready(function() {
-var empId = null; 
-var employee = null;
-$(document).on("pageinit", "#home", function () {
-    var employeeDataObject = null;
+$(document).on("pagecreate", "#home", function () {
     var listItems = ''; 
     $.getJSON("../data/employees.json", function(data){
         employeeDataObject = data;
@@ -19,8 +15,7 @@ $(document).on("pageinit", "#home", function () {
                  }                                                       
             });   
         });
-       $("#employeeDetails").data("employeeDataObject", employeeDataObject);
-        $("#managerDetails").data("employeeDataObject", employeeDataObject);
+        localStorage.setItem('employeeDataObject', JSON.stringify(employeeDataObject)); 
     });
 function populateSubordinates(managerObject) {
 //    console.log("PopulateSubord starting");
@@ -42,9 +37,15 @@ function populateSubordinates(managerObject) {
    
 $('body').on('click', '#mainList a', function(e) {
     if (e.handled !== true) {      
-        e.handled = true; 
-        empId = $(this).attr('id');
-        console.log("EmpId from home to employee details = " + empId);
+        e.handled = true;
+        // change
+//        empId = $(this).attr('id');
+        
+        // Local Storage Alt
+        // change
+        localStorage.empId = $(this).attr('id'); 
+
+        console.log("EmpId from home to employee details = " + localStorage.empId);
         $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );
         // Clear out search results after transitioning to Employee Details screen so that when you return
         // to the Search Screen the search results have been cleared out and the screen is blank.
@@ -54,12 +55,6 @@ $('body').on('click', '#mainList a', function(e) {
  }   
 });
     
-////  Alternate approach is to use local storage as described below  
-//    if(typeof(Storage)!=="undefined") {
-//        localStorage.employeeId = $(this).attr('id')
-////          localStorage.employeeId=e.currentTarget.getAttribute("id");        
-//    }
-//$(":mobile-pagecontainer").pagecontainer("change", "#employeeDetails");
 
                
 // Show the Welcome Message if no search request have been made by the user (i.e., search input field is blank). 
@@ -71,7 +66,7 @@ $("input[data-type='search']").on("keyup change", function() {
         $("#welcomeMsg").hide();        
     }
 });
-
+// Reference articles:
 //http://www.peachpit.com/articles/article.aspx?p=1929169&seqNum=2
 //http://stackoverflow.com/questions/18051227/how-to-populate-a-jquery-mobile-listview-with-json-data  
 //http://jsfiddle.net/Gajotres/8uac7/

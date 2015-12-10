@@ -1,14 +1,16 @@
 $(document).on("pagebeforeshow", "#employeeDetails", function () {
-$.mobile.page.prototype.options.domCache = true;
-//    console.log("EmpId when landing on employee details = " + empId);
-    var employeeDataObject = $(this).data("employeeDataObject");
+//    console.log("EmpId when landing on employee details = " + localStorage.empId);
+ //    var employeeDataObject = $(this).data("employeeDataObject");
     //    window.console.log(employeeDataObject); 
     var employeeData = "";
+    var employeeDataObject = JSON.parse(localStorage.getItem('employeeDataObject')); 
+    console.log("Log localStorage.employeeDataObject"); 
+    console.log(employeeDataObject); // change
     $.each(employeeDataObject, function () {
         $.each(this, function (key, value) {
-            //                    if ( value.id === localStorage.employeeId ) {
-            if (value.id === empId) {
-                employee = value;
+            if ( value.id === localStorage.empId ) {                 
+                employee = value; // change
+                localStorage.setItem('employee', JSON.stringify(employee)); 
 
                 var manager = populateManager(value);
                 var managername = null;
@@ -38,24 +40,21 @@ $.mobile.page.prototype.options.domCache = true;
             }
         });
     });
-    //        });
     
     $('body').on('click', '#employeeInfo a', function(e) {
- //  if statment jQuery Mobile defect #2639 that causes click listener to called multiple times
+ //  if statment to fix jQuery Mobile defect #2639 that causes click listener to called multiple times
  //  see last post on: https://github.com/jquery/jquery-mobile/issues/2369
       if (e.handled !== true) {      
            e.handled = true;
         var target = $(this).attr('target');
         if (target !== undefined && target !== null && target === "viewManager") {
-                empId = $(this).attr('id');
-                console.log("EmpId from employee details to manager details = " + empId);
+                localStorage.empId = $(this).attr('id'); // change
+                console.log("EmpId from employee details to manager details = " + localStorage.empId);
                 $.mobile.changePage( "#employeeDetails", { allowSamePageTransition: true} );            
         }        
         $('input[data-type="search"]').val("").trigger("change");
     }
-    }); 
-  
-    
+    });    
     
     
    function populateManager(employeeObject) {
